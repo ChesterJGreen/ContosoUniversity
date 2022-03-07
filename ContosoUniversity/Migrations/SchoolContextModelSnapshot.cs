@@ -57,7 +57,7 @@ namespace ContosoUniversity.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentID"), 1L, 1);
 
                     b.Property<decimal>("Budget")
-                        .HasColumnType("mondy");
+                        .HasColumnType("Money");
 
                     b.Property<int?>("InstructorID")
                         .HasColumnType("int");

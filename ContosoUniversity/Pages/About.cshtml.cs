@@ -29,6 +29,7 @@ namespace ContosoUniversity.Pages
                     EnrollmentDate = dateGroup.Key,
                     StudentCount = dateGroup.Count()
                 };
+
             Students = await data.AsNoTracking().ToListAsync();
         }
     }
