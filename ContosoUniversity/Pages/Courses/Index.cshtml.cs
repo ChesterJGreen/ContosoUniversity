@@ -20,14 +20,18 @@ namespace ContosoUniversity.Pages.Courses
             _context = context;
         }
 
-        public IList<Course> Courses { get;set; }
+        public IList<CourseViewModel> CourseVM { get;set; }
 
         public async Task OnGetAsync()
         {
-            Courses = await _context.Courses
-                .Include(c => c.Department)
-                .AsNoTracking()
-                .ToListAsync();
+            CourseVM = await _context.Courses
+                .Select(c => new CourseViewModel
+                {
+                    CourseID = c.CourseID,
+                    Title = c.Title,
+                    Credits = c.Credits,
+                    DepartmentName = c.Department.Name
+                }).ToListAsync();
         }
     }
 }
