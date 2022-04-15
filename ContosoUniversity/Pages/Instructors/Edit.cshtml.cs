@@ -31,7 +31,7 @@ namespace ContosoUniversity.Pages.Instructors
                 .Include(i => i.OfficeAssignment)
                 .Include(i => i.Courses)
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Instructor == null)
             {
@@ -51,7 +51,7 @@ namespace ContosoUniversity.Pages.Instructors
             var instructorToUpdate = await _context.Instructors
                 .Include(i => i.OfficeAssignment)
                 .Include(i => i.Courses)
-                .FirstOrDefaultAsync(s => s.Id == id);
+                .FirstOrDefaultAsync(s => s.ID == id);
 
             if (instructorToUpdate == null)
             {

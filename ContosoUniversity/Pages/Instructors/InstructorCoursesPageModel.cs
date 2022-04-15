@@ -20,7 +20,7 @@ namespace ContosoUniversity.Pages.Instructors
             {
                 AssignedCourseDataList.Add(new AssignedCourseData
                 {
-                    CourseId = course.CourseID,
+                    CourseID = course.CourseID,
                     Title = course.Title,
                     Assigned = instructorCourses.Contains(course.CourseID)
                 });

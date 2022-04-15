@@ -39,7 +39,7 @@ namespace ContosoUniversity.Pages.Instructors
             {
                 InstructorID = id.Value;
                 Instructor instructor = InstructorData.Instructors
-                    .Where(i => i.Id == id.Value).Single();
+                    .Where(i => i.ID == id.Value).Single();
                 InstructorData.Courses = instructor.Courses;
             }
 
